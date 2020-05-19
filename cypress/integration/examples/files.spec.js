@@ -7,7 +7,7 @@ const requiredExample = require('../../fixtures/example')
 
 context('Files', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8080/commands/files')
+    cy.visit('https://example.cypress.io/commands/files')
   })
 
   beforeEach(() => {
@@ -95,7 +95,6 @@ context('Files', () => {
       .then((response) => {
         cy.writeFile('cypress/fixtures/users.json', response.body)
       })
-
     cy.fixture('users').should((users) => {
       expect(users[0].name).to.exist
     })
