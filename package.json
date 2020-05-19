@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  
-    "scripts": {
-      "cypress:open": "cypress open"
-    },
-  
+  "scripts": {
+    "cypress:open": "cypress open"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gipuk/Calc2.0-cypress.git"
