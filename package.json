@@ -1,0 +1,24 @@
+{
+  "name": "kuba",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  
+    "scripts": {
+      "cypress:open": "cypress open"
+    },
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gipuk/Calc2.0-cypress.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gipuk/Calc2.0-cypress/issues"
+  },
+  "homepage": "https://github.com/gipuk/Calc2.0-cypress#readme",
+  "devDependencies": {
+    "cypress": "^4.5.0"
+  }
+}
