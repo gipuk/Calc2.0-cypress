@@ -51,12 +51,20 @@ export class CalcPage{
         cy.get('#hist > .dropdown-toggle').click()
     }
 
-    /*getresult (operationType, result) {
+    getresult (operationType, result) {
         if (operationType === "first") {
             cy.get('.r').should('contain', result)
         
         } else {
             cy.get(':nth-child(1) > .r').should('contain', result)
         } 
-    }*/
+    }
+
+    getresult1 (resulttext) {
+        cy.get(':nth-child(2) > .r').should('contain', resulttext)
+    }
+
+    getresult2 (resulttext) {
+        cy.get(':nth-child(3) > .r').should('contain', resulttext)
+    }
 }

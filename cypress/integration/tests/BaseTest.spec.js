@@ -1,7 +1,7 @@
 import {MainPage} from '../page-objects/mainPage'
 import {CalcPage} from '../page-objects/calcPage'
 
-describe ('Calc2test',  () => {
+describe ('Calc2test' ,  () => {
 
     const mainPage = new MainPage ()
 
@@ -9,7 +9,8 @@ describe ('Calc2test',  () => {
         mainPage.navigate()
     })
 
-    it('should calculate') , () => {
+
+    it('should calculate' , () => {
     //calculate 35*999+(100/4)
     const calcPage = new CalcPage ()
     
@@ -25,8 +26,7 @@ describe ('Calc2test',  () => {
     calcPage.calcbtn()
     calcPage.histdrop()
     calcPage.getresult("first", '34990')
-    
-
+      
     //calculate cos(pi)
     calcPage.clearbtn()
     calcPage.trigobtn()
@@ -34,22 +34,18 @@ describe ('Calc2test',  () => {
     calcPage.pitbn()
     calcPage.calcbtn()
     calcPage.histdrop()
-    cy.get(':nth-child(1) > .r').should('contain', '-1')
+    calcPage.getresult("second", '-1')
     
-
     //calculate sqrt(81)
     calcPage.clearbtn()
     calcPage.input("81")
     calcPage.sqrtbtn()
     calcPage.calcbtn()
     calcPage.histdrop()
-    cy.get(':nth-child(1) > .r').should('contain', '9')
+    calcPage.getresult("second", '9')
     
-
     //check history dropdown assertion
-    cy.get(':nth-child(2) > .r').should('contain', '-1')
-    cy.get(':nth-child(3) > .r').should('contain', '34990')
-    }
-
+    calcPage.getresult1('-1')
+    calcPage.getresult2('34990')
+    })
 })
-    

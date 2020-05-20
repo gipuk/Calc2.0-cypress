@@ -3,5 +3,3 @@ node_modules/
 fixtures
 plugins
 support
-cypress/
-cypress.json
