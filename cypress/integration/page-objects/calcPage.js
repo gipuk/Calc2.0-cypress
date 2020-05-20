@@ -1,57 +1,62 @@
 export class CalcPage{
+
     input (calctext) {
         cy.get('#input').type(calctext)
     }
 
-    multiplbtn () {
+    multiplBtn () {
         cy.get('#BtnMult').click()
     }
 
-    plusbtn () {
+    plusBtn () {
         cy.get('#BtnPlus').click()
     }
 
-    paranLbtn () {
+    minusBtn () {
+        cy.get('#BtnMinus').click()
+    }
+
+    paranLBtn () {
         cy.get('#BtnParanL').click()
     }
 
-    paranRbtn () {
+    paranRBtn () {
         cy.get('#BtnParanR').click()
     }
-    divbtn () {
+    divBtn () {
         cy.get('#BtnDiv').click()
 
     }
 
-    calcbtn () {
+    calcBtn () {
         cy.get('#BtnCalc').click()
     }
 
-    clearbtn () {
+    clearBtn () {
         cy.get('#BtnClear').click()
     }
 
-    trigobtn () {
+    trigoBtn () {
         cy.get('#trigorad').click()
     }
 
-    cosbtn () {
+    cosBtn () {
         cy.get('#BtnCos').click()
     }
 
-    pitbn () {
+    pitBtn () {
         cy.get('#BtnPi').click()
     }
 
-    sqrtbtn () {
+    sqrtBtn () {
         cy.get('#BtnSqrt').click()
     }
 
-    histdrop () {
+    histDrop () {
         cy.get('#hist > .dropdown-toggle').click()
     }
 
-    getresult (operationType, result) {
+    getResult (operationType, result) {
         if (operationType === "first") {
             cy.get('.r').should('contain', result)
         
@@ -60,11 +65,66 @@ export class CalcPage{
         } 
     }
 
-    getresult1 (resulttext) {
-        cy.get(':nth-child(2) > .r').should('contain', resulttext)
+    getResult1 (resultText1) {
+        cy.get(':nth-child(2) > .r').should('contain', resultText1)
     }
 
-    getresult2 (resulttext) {
-        cy.get(':nth-child(3) > .r').should('contain', resulttext)
+    getResult2 (resultText2) {
+        cy.get(':nth-child(3) > .r').should('contain', resultText2)
+    }
+
+    plusTwoNumber(firstNumber){
+        this.plusBtn()
+        this.input(firstNumber)
+        this.plusBtn()
+
+    }
+
+    multiply (firstNo, secondNo) {
+        this.input(firstNo)
+        this.multiplBtn()
+        this.input(secondNo)
+        this.plusBtn()
+        this.paranLBtn()
+    }
+
+    divide (firstNo, secondNo) {
+        this.input(firstNo)
+        this.divBtn()
+        this.input(secondNo)
+        this.paranRBtn()
+    }
+
+    calcResult (result) {
+        this.calcBtn()
+        this.histDrop()
+    }
+
+    calcCosPi () {
+        this.clearBtn()
+        this.trigoBtn()
+        this.cosBtn()
+        this.pitBtn()
+    }
+
+    calcSqrt (firstNo) {
+        this.clearBtn()
+        this.input(firstNo)
+        this.sqrtBtn()
+
+    }
+
+    allResults (result, resultText1, resultText2) {
+        this.histDrop()
+        this.getResult(result)
+        this.getResult1(resultText1)
+        this.getResult2(resultText2)
+    }
+
+    plus35 () {
+        let i = 0
+    for (i = 0; i<3; i++) {
+        this.plusTwoNumber("35")
+    }  
     }
 }
