@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/gipuk/Calc2.0-cypress#readme",
   "devDependencies": {
-    "cypress": "^4.5.0"
+    "cypress": "^4.12.1"
   }
 }
